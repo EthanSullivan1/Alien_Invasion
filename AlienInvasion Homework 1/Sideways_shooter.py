@@ -17,7 +17,7 @@ class Bullet(Sprite):
         self.x = float(self.rect.x)
     def update(self):
         """move the bullet up the screen"""
-        self.x += .5
+        self.x += 3
         self.rect.x = self.x
 
     def draw_bullet(self):
@@ -109,7 +109,7 @@ class AlienInvasion:
         elif event.key == pygame.K_DOWN:
             self.ship.moving_down = False
     def _fire_bullet(self):
-        if len(self.bullets) < 3:
+        if len(self.bullets) < 40:
             new_bullet = Bullet(self)
             self.bullets.add(new_bullet)
     def _update_screen(self):
